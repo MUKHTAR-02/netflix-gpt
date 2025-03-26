@@ -2,6 +2,7 @@
 
 - Create react app
 - Configured tailwindCSS
+- 
 
 
 
