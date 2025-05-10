@@ -31,7 +31,7 @@ const Login = () => {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log(user);
+                    // console.log("user = " +user);
 
                     updateProfile(user, {
                         displayName: fullName.current.value, photoURL: USER_AVATAR

@@ -33,7 +33,12 @@
 - Fetch data for trailer video
 - Update the store with trailer video data
 - Embedded the Youtube video and make it autoplay by mute   
--  
+- Build secondary component
+- Build movie list
+- Build movie card 
+- TMDB image CDN 
+- Created custom hook (usePopularMovies, useTvShows) and fetched the following data from TMDB APIs
+- 
 
 # Notes
 - Use library `formik` if making big form in React 
