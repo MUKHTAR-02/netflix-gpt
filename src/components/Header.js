@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { NETFLIX_LOGO } from "../utils/constants";
+import { SUPPORTED_LANGUAGES, NETFLIX_LOGO } from "../utils/constants";
+import { falseGptSearchView, toggleGptSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
 
@@ -33,6 +35,17 @@ const Header = () => {
     }
   }, []);
 
+  const handleGPTSearchClick = () => {
+    dispatch(toggleGptSearchView());
+  }
+
+  const handleMainContainerClick = () => {
+    dispatch(falseGptSearchView());
+  }
+
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  }
 
   const handleSignOutButton = () => {
     signOut(auth).then(() => {
@@ -43,15 +56,27 @@ const Header = () => {
     });
   }
 
+  const viewGptButton = useSelector((store) => store.gpt.gptSearchView);
+
   return (
     <div className="absolute w-full px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img src={NETFLIX_LOGO}
-        alt="Netflix logo" className="w-48 bg-opacity-100"
+      <button onClick={handleMainContainerClick}>
+        <img src={NETFLIX_LOGO}
+          alt="Netflix logo" className="w-48 bg-opacity-100"
       />
+      </button>
 
       {user &&
         <div className="flex justify-between mt-4">
-          <img alt="userIcon" className="w-10 h-10 mr-4" src={user?.photoURL} />
+          {viewGptButton && <select onChange={handleLanguageChange} className="border border-black rounded-lg mr-2 px-2 h-12 font-bold bg-gray-700 text-white">
+            {SUPPORTED_LANGUAGES.map((lang) => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+          </select>}
+
+          {!viewGptButton && 
+            <button className="border border-black rounded-lg text-white px-2 h-12 bg-purple-700 font-bold" onClick={handleGPTSearchClick}>GPT Search</button>
+          }
+
+          <img alt="userIcon" className="w-10 h-10 mr-4 ml-4" src={user?.photoURL} />
 
           <h3 className="font-bold text-red-700">
             {errorMsg}

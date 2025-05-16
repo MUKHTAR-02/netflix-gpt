@@ -38,7 +38,9 @@
 - Build movie card 
 - TMDB image CDN 
 - Created custom hook (usePopularMovies, useTvShows) and fetched the following data from TMDB APIs
-- 
+- GPT search feature
+- GPT search page with Multiple language selection
+- Integrate GPT APIs
 
 # Notes
 - Use library `formik` if making big form in React 
