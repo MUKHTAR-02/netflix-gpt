@@ -2,6 +2,7 @@ import React from 'react';
 import { IMG_CDN_URL } from '../utils/constants';
 
 const MovieCard = ({posterPath, movieTitle}) => {
+  if(!posterPath) return null;
   return (
     <div className='w-40 pr-4'>
       <img alt={movieTitle} 

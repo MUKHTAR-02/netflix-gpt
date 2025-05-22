@@ -1,10 +1,9 @@
-import React from 'react';
 import MovieCard from './MovieCard';
 
-const MovieList = ({ Category, movies }) => {
+const MovieList = ({ category, movies }) => {
   return (
     <div className='px-6'>
-      <h1 className='text-2xl text-white font-bold py-3'> {Category} </h1>
+      <h1 className='text-2xl text-white font-bold py-3'> {category} </h1>
       <div className='flex overflow-x-scroll no-scrollbar decoration-black'>
         <div className='flex'>
           {Array.isArray(movies) && movies.length > 0 ? (

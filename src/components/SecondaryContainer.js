@@ -13,10 +13,10 @@ const SecondaryContainer = () => {
           MovieCard * n
       */}
 
-        <MovieList Category={"Upcoming Movies"} movies={movies.upcomingMovies} />
-        <MovieList Category={"Popular Movies"} movies={movies.popularMovies} />
-        <MovieList Category={"Top Rated Movies"} movies={movies.topRatedMovies} />
-        <MovieList Category={"Top Tv Shows"} movies={movies.tvShows} />
+        <MovieList category={"Upcoming Movies"} movies={movies.upcomingMovies} />
+        <MovieList category={"Popular Movies"} movies={movies.popularMovies} />
+        <MovieList category={"Top Rated Movies"} movies={movies.topRatedMovies} />
+        <MovieList category={"Top Tv Shows"} movies={movies.tvShows} />
 
       </div>
     </div>
