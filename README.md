@@ -40,7 +40,11 @@
 - Created custom hook (usePopularMovies, useTvShows) and fetched the following data from TMDB APIs
 - GPT search feature
 - GPT search page with Multiple language selection
-- Integrate GPT APIs
+- Integrate GPT(Cohere) APIs
+- Fetched Movies Suggestions from TMDB
+- Reused MovieList component in GPTMovieSuggestion
+- Memoization
+- Made our App responsive
 
 # Notes
 - Use library `formik` if making big form in React 

@@ -18,7 +18,7 @@ const Browse = () => {
   const gptSearchView = useSelector(store => store.gpt.gptSearchView);
 
   return (
-    <div>
+    <div> 
       <Header />
       {gptSearchView ? <GPTSearch /> : <>
         <MainContainer />

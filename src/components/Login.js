@@ -63,13 +63,13 @@ const Login = () => {
     return (
         <div>
             <Header />
-            <>  {/* fragement */}
+            <div>  {/* fragement */}
                 <img src={NETFLIX_BG}
-                    alt="Netflix bg img" className="absolute" />
-            </>
+                    alt="Netflix bg img" className="absolute w-full md:h-full h-full object-cover" />
+            </div>
 
             <>
-                <form onSubmit={(e) => e.preventDefault()} className="absolute w-1/3 rounded-lg mx-auto right-0 left-0 my-40 p-12 bg-black bg-opacity-70 items-center">
+                <form onSubmit={(e) => e.preventDefault()} className="absolute md:w-1/3 w-2/3 rounded-lg mx-auto right-0 left-0 my-40 p-12 bg-black bg-opacity-70 items-center">
                     <div className="flex flex-col text-white">
                         <h1 className="my-3 font-bold text-2xl">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
 
