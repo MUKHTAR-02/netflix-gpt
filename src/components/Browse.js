@@ -1,19 +1,14 @@
-import useUpcomingMovies from "../hooks/useUpcomingMovies";
-import usePopularMovies from "../hooks/usePopularMovies";
-import useTopRatedMovies from "../hooks/useTopRatedMovies";
-import useTvShows from "../hooks/useTvShows";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import GPTSearch from "./GPTSearch";
 import { useSelector } from "react-redux";
+import useAllMoviesData from "../hooks/useAllMoviesData";
 
 
 const Browse = () => {
-  useUpcomingMovies();
-  usePopularMovies();
-  useTopRatedMovies();
-  useTvShows();
+
+  useAllMoviesData();
 
   const gptSearchView = useSelector(store => store.gpt.gptSearchView);
 

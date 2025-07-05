@@ -1,4 +1,5 @@
 import MovieCard from './MovieCard';
+import ShimmerMovieCard from './ShimmerMovieCard';
 
 const MovieList = ({ category, movies }) => {
   return (
@@ -12,10 +13,10 @@ const MovieList = ({ category, movies }) => {
                 key={movie.id}
                 posterPath={movie?.poster_path}
                 movieTitle={movie?.title}
-              />
+                />
             ))
           ) : (
-            <h1 className="text-white">No movies 😕</h1>
+            <ShimmerMovieCard/>
           )}
         </div>
       </div>
